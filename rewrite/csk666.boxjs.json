@@ -1,10 +1,8 @@
 {
-  "id": "csk666.app.sub",
-  "name": "csk666 应用订阅",
-  "author": "@csk666",
-  "icon": "https://avatars.githubusercontent.com/u/62277551?v=4",
-  "repo": "https://github.com/csk666/quanx",
-  "apps": [
-	
-  ]
+  "id": "fokit.app.sub",
+  "name": "FoKit 应用订阅",
+  "author": "@FoKit",
+  "icon": "https://avatars.githubusercontent.com/u/44187836",
+  "repo": "https://github.com/FoKit",
+  "apps": []
 }
