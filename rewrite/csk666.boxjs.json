@@ -6,6 +6,352 @@
   "repo": "https://github.com/csk666/quanx",
   "apps": [
     {
+      "id": "jparking",
+      "name": "捷停车",
+      "author": "@FoKit",
+      "descs_html": ["捷停车签到"],
+      "icons": [
+        "https://raw.githubusercontent.com/FoKit/Scripts/main/images/jparking.png",
+        "https://raw.githubusercontent.com/FoKit/Scripts/main/images/jparking.png"
+      ],
+      "scripts": [
+        {
+          "name": "捷停车签到",
+          "script": "https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/jparking_sign.js"
+        }
+      ],
+      "keys": ["jtc_userId", "jtc_taskNo"],
+      "settings": [
+        {
+          "id": "jtc_userId",
+          "name": "用户ID",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "placeholder": "userId1@userId2",
+          "desc": "多个ID@隔开"
+        },
+        {
+          "id": "jtc_taskNo",
+          "name": "任务ID",
+          "val": "T71811221608",
+          "type": "text",
+          "placeholder": "T71811221608",
+          "desc": "默认 T71811221608 可留空"
+        }
+      ]
+    },
+    {
+      "id": "12123",
+      "name": "交管12123",
+      "author": "@FoKit",
+      "descs_html": ["交管12123数据"],
+      "icons": [
+        "https://raw.githubusercontent.com/FoKit/Scripts/main/images/12123.png",
+        "https://raw.githubusercontent.com/FoKit/Scripts/main/images/12123.png"
+      ],
+      "keys": ["body_12123", "referer_12123"],
+      "settings": [
+        {
+          "id": "body_12123",
+          "name": "交管12123_Body",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": ""
+        },
+        {
+          "id": "referer_12123",
+          "name": "交管12123_Referer",
+          "val": "",
+          "type": "text",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "china_telecom",
+      "name": "中国电信",
+      "author": "@FoKit",
+      "descs_html": ["中国电信 Cookie"],
+      "icons": [
+        "https://raw.githubusercontent.com/FoKit/Scripts/main/images/china_telecom.png",
+        "https://raw.githubusercontent.com/FoKit/Scripts/main/images/china_telecom.png"
+      ],
+      "keys": ["china_telecom_cookie", "china_telecom_login_url"],
+      "settings": [
+        {
+          "id": "china_telecom_cookie",
+          "name": "Cookie",
+          "val": "",
+          "type": "text",
+          "desc": ""
+        },
+        {
+          "id": "china_telecom_login_url",
+          "name": "Login_url",
+          "val": "",
+          "type": "text",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "blackmatrix7.manmanbuy",
+      "name": "慢慢买",
+      "keys": [
+        "manmanbuy_checkin_cookie",
+        "manmanbuy_login_body",
+        "manmanbuy_username",
+        "manmanbuy_deviceid"
+      ],
+      "author": "@blackmatrix7",
+      "repo": "https://github.com/blackmatrix7/ios_rule_script/tree/master/script/manmanbuy",
+      "icons": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanmai.png",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanmai.png"
+      ],
+      "script": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.js"
+    },
+    {
+      "id": "blackmatrix7.smzdm",
+      "name": "什么值得买",
+      "keys": [
+        "smzdm_cookie",
+        "smzdm_cookie_id",
+        "smzdm_signin",
+        "smzdm_mission",
+        "smzdm_lottery",
+        "smzdm_blackroom",
+        "smzdm_sync_qinglong"
+      ],
+      "author": "@blackmatrix7",
+      "repo": "https://github.com/blackmatrix7/ios_rule_script/tree/master/script/smzdm",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/smzdm.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/smzdm.png"
+      ],
+      "scripts": [
+        {
+          "name": "执行每日签到与任务",
+          "script": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js"
+        }
+      ],
+      "settings": [
+        {
+          "id": "smzdm_sync_qinglong",
+          "name": "同步数据到青龙面板",
+          "val": false,
+          "type": "boolean",
+          "desc": "将必要数据同步至青龙面板，以执行作业"
+        },
+        {
+          "id": "smzdm_signin",
+          "name": "执行每日签到",
+          "val": false,
+          "type": "boolean",
+          "desc": ""
+        },
+        {
+          "id": "smzdm_mission",
+          "name": "执行每日任务",
+          "val": false,
+          "type": "boolean",
+          "desc": ""
+        },
+        {
+          "id": "smzdm_lottery",
+          "name": "执行每日抽奖",
+          "val": false,
+          "type": "boolean",
+          "desc": ""
+        },
+        {
+          "id": "smzdm_blackroom",
+          "name": "脚本运行时进行黑号检测",
+          "val": false,
+          "type": "boolean",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "id": "blackmatrix7.tieba",
+      "name": "百度贴吧",
+      "keys": ["tieba_signin_cookie", "tieba_sync_qinglong"],
+      "author": "@blackmatrix7",
+      "repo": "https://github.com/blackmatrix7/ios_rule_script/tree/master/script/tieba",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tieba.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tieba.png"
+      ],
+      "script": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js",
+      "settings": [
+        {
+          "id": "tieba_sync_qinglong",
+          "name": "同步数据到青龙面板",
+          "val": false,
+          "type": "boolean",
+          "desc": "将必要数据同步至青龙面板，以执行作业"
+        },
+        {
+          "id": "tieba_signin_cookie",
+          "name": "百度贴吧Cookies",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "推荐由脚本自动获取Cookies，如有特殊情况可手动填写，必须为Json格式",
+          "autoGrow": true,
+          "desc": "多账户Cookies，如出现异常，请删除全部内容，避免直接编辑数据"
+        }
+      ]
+    },
+    {
+      "id": "sfexpress",
+      "name": "顺丰速运",
+      "keys": ["chavy_login_sfexpress"],
+      "author": "@wangfei021325, @chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/sfexpress",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/sfexpress.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/sfexpress.png"
+      ]
+    },
+    {
+      "id": "10010Ck",
+      "name": "中国联通",
+      "keys": ["@YaYa_10010.cookie"],
+      "author": "@dompling",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/10010.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10010.png"
+      ]
+    },
+    {
+      "id": "JD_Cookies",
+      "name": "京东账号",
+      "keys": ["CookiesJD", "cks_get_mute"],
+      "descs_html": [
+        "请勿随意在输入框修改内容，建议通过脚本去获取cookie，若要修改，请按照JSON 格式修改（<a href=\"https://www.bejson.com/json/format\">可使用此JSON校验</a> ，或点击右上角按钮🔘进行校验(如有弹窗提示则为异常JSON)）。",
+        "示例：[{\"userName\":\"jd_xxx\",\"cookie\":\"pt_key=AAJ;pt_pin=jd_xxx;\"},{\"userName\":\"jd_66\",\"cookie\":\"pt_key=AAJ;pt_pin=jd_66;\"}]",
+        "脚本地址【<a href=\"https://jdsharedresourcescdn.azureedge.net/jdresource/JD_extra_cookie.js\">京东多 CK获取</a>】,并按照此脚本注释进行配置",
+        "使用方式【<a href=\"https://home.m.jd.com/myJd/newhome.action\">个人中心</a>】获取对应的数据Code",
+        "注1：如与NobyDa的京东cookie重复，建议在此处删除重复的cookie",
+        "注2：删除条件，是用来清除不需要的ck，条件值为京东 ck 的第几个，如第一个：1，第二个：2；多个请使用,分割。删除ck 脚本不会去清理野比的ck，请谨慎使用。删除成功之后，请手动刷新 boxjs"
+      ],
+      "settings": [
+        {
+          "id": "cks_get_mute",
+          "name": "静音获取",
+          "val": false,
+          "type": "boolean",
+          "desc": "更新时，不会执行通知提示"
+        },
+        {
+          "id": "del_condition",
+          "name": "删除条件",
+          "val": "",
+          "type": "text",
+          "desc": "输入的条件,运行一次之后则会清空条件"
+        },
+        {
+          "id": "CookiesJD",
+          "name": "CK 列表",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": false,
+          "rows": 8,
+          "desc": "CK 列表 (JSON 格式)"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/jd.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/jd.png"
+      ],
+      "author": "@dompling",
+      "repo": "https://github.com/dompling/Script/blob/master/jd/JD_extra.js",
+      "scripts": [
+        {
+          "name": "京东签到",
+          "script": "https://raw.githubusercontent.com/dompling/Script/master/jd/JD_extra_sign.js"
+        },
+        {
+          "name": "删除相关 ck",
+          "script": "https://raw.githubusercontent.com/dompling/Script/master/jd/jd_ck_del.js"
+        }
+      ]
+    },
+    {
+      "id": "bilibili.com",
+      "name": "bilibili",
+      "author": "@MartinsKing",
+      "script": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js",
+      "descs_html": [""],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/bilibili.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/bilibili.png"
+      ],
+      "keys": [
+        "bilibili_headers",
+        "bilibili_watch",
+        "bilibili_share",
+        "bilibili_coins",
+        "bilibili_score",
+        "bilibili_user",
+        "bilibili_key",
+        "bilibili_exec"
+      ],
+      "settings": [
+        {
+          "id": "bilibili_exec",
+          "name": "投币次数",
+          "val": "5",
+          "type": "text",
+          "desc": "投币次数(用户自行设置，默认5次)"
+        }
+      ]
+    },
+    {
+      "id": "ximalaya.com",
+      "name": "ximalaya",
+      "author": "@MartinsKing",
+      "script": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js",
+      "descs_html": [""],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/ximalaya.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/ximalaya.png"
+      ],
+      "keys": ["xmly_headers", "xmly_watch", "xmly_spec", "xmly_gene"]
+    },
+    {
+      "id": "v.qq.com",
+      "name": "qqvideo",
+      "author": "@MartinsKing",
+      "script": "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js",
+      "descs_html": [""],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/videoqq.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/videoqq.png"
+      ],
+      "keys": ["videoqq_pc_cookie", "videoqq_ref_url"],
+      "settings": [
+        {
+          "id": "videoqq_pc_cookie",
+          "name": "pc_cookie",
+          "type": "text",
+          "desc": "腾讯视频网页版cookie"
+        },
+        {
+          "id": "videoqq_ref_url",
+          "name": "ref_url",
+          "type": "text",
+          "desc": "腾讯视频Request URL"
+        }
+      ]
+    },
+    {
       "id": "iQIYI",
       "name": "爱奇艺",
       "keys": ["CookieQY"],
@@ -28,6 +374,78 @@
         "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/iQIYI.png",
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/iQIYI.png"
       ]
+    },
+    {
+      "id": "52poje",
+      "name": "吾爱破解",
+      "keys": ["nobyda_52pojie"],
+      "descs_html": [
+        "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js\">脚本注释</a></h4>"
+      ],
+      "script": "https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js",
+      "author": "@NobyDa",
+      "repo": "https://github.com/NobyDa/Script/blob/master/52pojie-DailyBonus/52pojie.js",
+      "icons": [
+        "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/52pj.png",
+        "https://raw.githubusercontent.com/NobyDa/mini/master/Color/52pj.png"
+      ]
+    },
+    {
+      "id": "lkAliYunPanCheckIn",
+      "name": "阿里云盘签到",
+      "desc_html": "⚠️使用说明</br>详情【<a href='https://github.com/lowking/Scripts/blob/master/ali/aliYunPanCheckIn.js?raw=true'><font class='red--text'>点我查看</font></a>】",
+      "icons": [
+        "https://raw.githubusercontent.com/lowking/Scripts/master/doc/icon/aliYunPana.png",
+        "https://raw.githubusercontent.com/lowking/Scripts/master/doc/icon/aliYunPan.png"
+      ],
+      "keys": ["lkAliYunPanTokenKey", "lkAliYunPanRefreshTokenKey"],
+      "settings": [
+        {
+          "id": "lkIsEnableLogAliYunPanCheckIn",
+          "name": "开启/关闭日志",
+          "val": true,
+          "type": "boolean",
+          "desc": "默认开启"
+        },
+        {
+          "id": "lkNotifyOnlyFailAliYunPanCheckIn",
+          "name": "只当执行失败才通知",
+          "val": false,
+          "type": "boolean",
+          "desc": "默认关闭"
+        },
+        {
+          "id": "lkIsEnableTgNotifyAliYunPanCheckIn",
+          "name": "开启/关闭Telegram通知",
+          "val": false,
+          "type": "boolean",
+          "desc": "默认关闭"
+        },
+        {
+          "id": "lkTgNotifyUrlAliYunPanCheckIn",
+          "name": "Telegram通知地址",
+          "val": "",
+          "type": "text",
+          "desc": "Tg的通知地址，如：https://api.telegram.org/bot-token/sendMessage?chat_id=-100140&parse_mode=Markdown&text="
+        },
+        {
+          "id": "lkAliYunPanTokenKey",
+          "name": "阿里云盘token",
+          "val": "",
+          "type": "text",
+          "desc": "阿里云盘token"
+        },
+        {
+          "id": "lkAliYunPanRefreshTokenKey",
+          "name": "阿里云盘refresh_token",
+          "val": "",
+          "type": "text",
+          "desc": "阿里云盘refresh_token"
+        }
+      ],
+      "author": "@lowking",
+      "repo": "https://github.com/lowking/Scripts",
+      "script": "https://github.com/lowking/Scripts/blob/master/ali/aliYunPanCheckIn.js?raw=true"
     }
   ]
 }
