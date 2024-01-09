@@ -1,13 +1,41 @@
 const cookieName = "cksk";
 const cookieKey = "jsessionId";
 const chavy = init();
-const cookieVal = $request.headers["Cookie"];
-if (cookieVal) {
-  if (chavy.setdata(cookieVal, cookieKey)) {
-      chavy.msg(`${cookieName}`, '获取Cookie: 成功', '')
-      chavy.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${cookieVal}`)
-    }
+
+let isGetCookie = typeof $request !== "undefined";
+
+if (isGetCookie) {
+  getcookie();
+} else {
+  sign();
 }
+
+function getcookie() {
+  var cookieVal = $request.headers["Cookie"];
+  if (cookieVal) {
+    var matchResult = cookieVal.match(/(?<=JSESSIONID=).*/gi);
+    if (0 !== matchResult.length) {
+      var jsessionId = matchResult[0];
+      if (jsessionId && chavy.getdata(cookieKey)) {
+        jsessionId !== chavy.getdata(cookieKey)
+          ? (chavy.setdata(jsessionId, cookieKey),
+            chavy.msg(`${cookieName}`, "更新jsessionId: 成功", ""))
+          : chavy.msg(`${cookieName}`, "目前的jsessionId一致", "");
+      } else {
+        jsessionId != undefined
+          ? (chavy.setdata(jsessionId, cookieKey),
+            chavy.msg(`${cookieName}`, "获取jsessionId: 成功", ""))
+          : chavy.msg(`${cookieName}`, "获取jsessionId: 失败", "");
+      }
+    } else {
+      chavy.msg(`${cookieName}`, "cookie中匹配jsessionId: 失败", "");
+    }
+  } else {
+    chavy.msg(`${cookieName}`, "获取cookie: 失败", "");
+  }
+}
+
+function sign() {}
 
 function init() {
   isSurge = () => {
@@ -52,4 +80,5 @@ function init() {
   };
   return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done };
 }
+
 chavy.done();
