@@ -3,7 +3,7 @@ const cookieKey = "jsessionId";
 const chavy = init();
 
 let isGetCookie = typeof $request !== "undefined";
-
+chavy.log(`[${cookieName}] 是否获取cookie: ${isGetCookie}`)
 if (isGetCookie) {
   getcookie();
 } else {
