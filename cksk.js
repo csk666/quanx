@@ -3,7 +3,6 @@ const cookieKey = "jsessionId";
 const chavy = init();
 const cookieVal = $request.headers["Cookie"];
 if (cookieVal) {
-  chavy.log(`[${cookieName}] , cookie: ${cookieVal}`);
   if (chavy.setdata(cookieVal, cookieVal)) {
     chavy.msg(`${cookieName}`, "获取jsessionId: 成功", "");
     chavy.log(
