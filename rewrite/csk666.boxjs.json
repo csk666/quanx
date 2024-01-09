@@ -6,6 +6,17 @@
   "repo": "https://github.com/csk666/quanx",
   "apps": [
     {
+      "id": "cksk",
+      "name": "cksk",
+      "keys": ["jsessionId"],
+      "author": "@csk666",
+      "repo": "https://github.com/csk666/quanx/tree/main",
+      "script": "https://raw.githubusercontent.com/csk666/quanx/main/cksk.js",
+      "icons": [
+        "https://raw.githubusercontent.com/csk666/pictures/main/icon/cksk.png"
+      ]
+    },
+    {
       "id": "jparking",
       "name": "捷停车",
       "author": "@FoKit",
