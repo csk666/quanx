@@ -3,10 +3,13 @@ const cookieKey = "jsessionId";
 const chavy = init();
 const cookieVal = $request.headers["Cookie"];
 if (cookieVal) {
-  if (chavy.setdata(cookieVal, cookieVal)) {
+  chavy.log(`[${cookieName}] , cookie: ${cookieVal}`);
+  var jsessionId = cookieVal.match(/(?<=JSESSIONID=).*/gi);
+  chavy.log(`[${cookieName}] , cookie: ${jsessionId}`);
+  if (chavy.setdata(cookieKey, jsessionId)) {
     chavy.msg(`${cookieName}`, "获取jsessionId: 成功", "");
     chavy.log(
-      `[${cookieName}] 获取jsessionId: 成功, jsessionId: ${cookieVal}`
+      `[${cookieName}] 获取jsessionId: 成功, jsessionId: ${jsessionId}`
     );
   }
 }
