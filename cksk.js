@@ -3,9 +3,10 @@ const cookieKey = "jsessionId";
 const chavy = init();
 const cookieVal = $request.headers["Cookie"];
 if (cookieVal) {
-  if (chavy.setdata(cookieVal, cookieKey)) {
-    chavy.msg(`${cookieName}`, "获取Cookie: 成功", "");
-    chavy.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${cookieVal}`);
+  var jsessionId = cookieVal.match(/(?<=JSESSIONID=).*/gi);
+  if (chavy.setdata(cookieVal, jsessionId)) {
+    chavy.msg(`${cookieName}`, "获取jsessionId: 成功", "");
+    chavy.log(`[${cookieName}] 获取jsessionId: 成功, cookie: ${jsessionId}`);
   }
 }
 
