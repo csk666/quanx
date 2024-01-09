@@ -2,6 +2,7 @@ const cookieName = 'AcFun'
 const cookieKey = 'jsessionId'
 const chavy = init()
 const cookieVal = $request.headers['Cookie']
+chavy.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${cookieVal}`)
 if (cookieVal) {
   if (chavy.setdata(cookieVal, cookieKey)) {
     chavy.msg(`${cookieName}`, '获取Cookie: 成功', '')
