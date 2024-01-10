@@ -8,7 +8,7 @@
 {
       "id": "yhsh",
       "name": "永辉生活",
-      "keys": ["yhsh_cookie","yhsh_token","task_id","shop_id","task_code"],
+      "keys": ["yhsh_token","task_id","shop_id","task_code"],
       "author": "@csk666",
       "repo": "https://github.com/csk666/quanx/tree/main",
       "script": "https://raw.githubusercontent.com/csk666/quanx/main/yhsh.js",
