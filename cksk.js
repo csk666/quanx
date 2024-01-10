@@ -92,19 +92,19 @@ function sign() {
 
   const headers = {
     "X-Requested-With": `XMLHttpRequest`,
-    Connection: `keep-alive`,
+    "Connection": `keep-alive`,
     "Accept-Encoding": `gzip, deflate, br`,
     "Content-Type": `application/x-www-form-urlencoded; charset=utf-8`,
-    Origin: `https://wx5e52d9bcd5773888-mall.m.dianplus.cn`,
+    "Origin": `https://wx5e52d9bcd5773888-mall.m.dianplus.cn`,
     "User-Agent": `Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.42(0x18002a31) NetType/4G Language/zh_CN`,
-    Traceid: `-83cb1556-c297-465e-8059-9a8a3450c3fb-1698832862379`,
-    Host: `wx5e52d9bcd5773888-mall.m.dianplus.cn`,
-    Referer: `https://wx5e52d9bcd5773888-mall.m.dianplus.cn/`,
-    Cookie: hasCookie,
+    "Traceid": `-83cb1556-c297-465e-8059-9a8a3450c3fb-1698832862379`,
+    "Host": `wx5e52d9bcd5773888-mall.m.dianplus.cn`,
+    "Referer": `https://wx5e52d9bcd5773888-mall.m.dianplus.cn/`,
+    "Cookie": hasCookie,
     "Accept-Language": `zh-CN,zh-Hans;q=0.9`,
-    Accept: `*/*`,
+    "Accept": `*/*`,
   };
-  const body = `brandId=${hasBrandId}$&customId=${hasCustomId}$`;
+  const body = `brandId=${parseInt(hasBrandId)}$&customId=${parseInt(hasCustomId)}$`;
 
   const myRequest = {
     url: url,
@@ -114,6 +114,13 @@ function sign() {
 
   chavy.post(myRequest, (error, response, data) => {
     chavy.log(`${cookieName}, data: ${data}`);
+    if (error) {
+      subTitle = `签到结果: 失败`;
+      detail = `详情请查看日志`;
+      chavy.msg(title, subTitle, detail);
+      chavy.log(`签到失败，error：${error}`)
+      chavy.done();
+    }
     if (undefined === data) {
       subTitle = `签到结果: 失败`;
       detail = `cookie失效`;
