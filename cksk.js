@@ -126,18 +126,25 @@ function sign() {
       detail = `cookie失效`;
       chavy.msg(title, subTitle, detail);
     } else {
-      const result = JSON.parse(data);
-
-      if (result.status === "success") {
-        subTitle = `签到结果: 成功`;
-        detail = `获得积分: ${result.resultObject.checkCredit}`;
-      } else {
+      try{
+        const result = JSON.parse(data);
+        if (result.status === "success") {
+          subTitle = `签到结果: 成功`;
+          detail = `获得积分: ${result.resultObject.checkCredit}`;
+        } else {
+          subTitle = `签到结果: 失败`;
+          detail = `${result.exceptionMessage}`;
+        }
+        chavy.msg(title, subTitle, detail);
+      }catch(err){
         subTitle = `签到结果: 失败`;
-        detail = `${result.exceptionMessage}`;
+        detail = `详情请查看日志1`;
+        chavy.msg(title, subTitle, detail);
+        chavy.log(`签到失败1，error：${err}`)
+      }finally{
+        chavy.done();
       }
-      chavy.msg(title, subTitle, detail);
     }
-    chavy.done();
   });
 }
 
