@@ -79,6 +79,8 @@ function sign() {
   let detail = ``;
 
   chavy.log(`cookie: ${hasCookie}`);
+  chavy.log(`brandId: ${hasBrandId}`);
+  chavy.log(`customId: ${hasCustomId}`);
 
   if (!hasCookie || !hasBrandId || !hasCustomId) {
     subTitle = `请先获取cookie`;
