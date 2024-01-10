@@ -40,7 +40,7 @@ function getcookie() {
       chavy.msg(`${cookieName}`, "url中匹配token: 失败", "");
     }
   }
-  var bodyValStr = $reponse.body;
+  var bodyValStr = $response.body;
   if (bodyValStr) {
     try {
       const bodyVal = JSON.parse(bodyValStr);
