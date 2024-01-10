@@ -1,12 +1,11 @@
 const cookieName = "永辉生活";
-const cookieKey = "yhsh_cookie";
+
 const tokenKey = "yhsh_token";
 const taskIdKey = "task_id";
 const shopIdKey = "shop_id";
 const taskCodeKey = "task_code";
 const chavy = init();
 
-var hasCookie = chavy.getdata(cookieKey);
 var hasToken = chavy.getdata(tokenKey);
 var hasTaskId = chavy.getdata(taskIdKey);
 var hasShopId = chavy.getdata(shopIdKey);
@@ -21,23 +20,6 @@ if (isGetCookie) {
 }
 
 function getcookie() {
-  var cookieVal = $request.headers["Cookie"];
-  if (cookieVal) {
-    if (cookieVal && hasCookie) {
-      cookieVal !== hasCookie
-        ? (chavy.setdata(cookieVal, cookieKey),
-          chavy.msg(`${cookieName}`, "更新cookie: 成功", ""))
-        : chavy.log(`${cookieName}: 目前的cookie一致`);
-    } else {
-      cookieVal != undefined
-        ? (chavy.setdata(cookieVal, cookieKey),
-          chavy.msg(`${cookieName}`, "获取cookie: 成功", ""))
-        : chavy.msg(`${cookieName}`, "获取cookie: 失败", "");
-    }
-  } else {
-    chavy.msg(`${cookieName}`, "获取cookie: 失败", "");
-  }
-
   var urlVal = $request.url;
   if (urlVal) {
     var matchResult = urlVal.match(/(?<=access_token=).*(?=&)/gi);
