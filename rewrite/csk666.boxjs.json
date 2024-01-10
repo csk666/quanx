@@ -8,7 +8,7 @@
     {
       "id": "cksk",
       "name": "cksk",
-      "keys": ["cksk_cookie"],
+      "keys": ["cksk_cookie","brand_Id","custom_Id"],
       "author": "@csk666",
       "repo": "https://github.com/csk666/quanx/tree/main",
       "script": "https://raw.githubusercontent.com/csk666/quanx/main/cksk.js",
