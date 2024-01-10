@@ -104,7 +104,7 @@ function sign() {
     "Accept-Language": `zh-CN,zh-Hans;q=0.9`,
     "Accept": `*/*`,
   };
-  const body = `brandId=${parseInt(hasBrandId)}$&customId=${parseInt(hasCustomId)}$`;
+  const body = `brandId=${hasBrandId}&customId=${hasCustomId}`;
 
   const myRequest = {
     url: url,
