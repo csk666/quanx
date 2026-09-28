@@ -1,0 +1,9 @@
+; JD Cookie / WSKEY Sync to Qinglong
+; 自动抓取京东 pt_key 或 wskey 并同步到青龙面板
+; https://github.com/byhooi/Surge
+
+hostname = api.m.jd.com, mars.jd.com, sh.jd.com, im-x.jd.com
+
+^https?:\/\/(?:api\.m\.jd\.com\/client\.action.*functionId=(getJDUserInfoUnion|queryJDUserInfo|myHomeV2|home|wareBusiness|basicConfig)|mars\.jd\.com\/log\/sdk\/v2) url script-request-header https://raw.githubusercontent.com/byhooi/Surge/main/Script/jd_cookie_sync.js
+
+^https?:\/\/(?:sh\.jd\.com\/d\?fl=|im-x\.jd\.com\/dsp\/np) url script-request-header https://raw.githubusercontent.com/byhooi/Surge/main/Script/jd_cookie_sync.js
