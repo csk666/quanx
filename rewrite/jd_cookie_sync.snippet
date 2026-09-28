@@ -4,6 +4,6 @@
 
 hostname = api.m.jd.com, mars.jd.com, sh.jd.com, im-x.jd.com
 
-^https?:\/\/(?:api\.m\.jd\.com\/client\.action.*functionId=(getJDUserInfoUnion|queryJDUserInfo|myHomeV2|home|wareBusiness|basicConfig)|mars\.jd\.com\/log\/sdk\/v2) url script-request-header https://raw.githubusercontent.com/byhooi/Surge/main/Script/jd_cookie_sync.js
+^https?:\/\/(?:api\.m\.jd\.com\/client\.action.*functionId=(getJDUserInfoUnion|queryJDUserInfo|myHomeV2|home|wareBusiness|basicConfig)|mars\.jd\.com\/log\/sdk\/v2) url script-request-header jd_cookie_sync.js
 
-^https?:\/\/(?:sh\.jd\.com\/d\?fl=|im-x\.jd\.com\/dsp\/np) url script-request-header https://raw.githubusercontent.com/byhooi/Surge/main/Script/jd_cookie_sync.js
+^https?:\/\/(?:sh\.jd\.com\/d\?fl=|im-x\.jd\.com\/dsp\/np) url script-request-header jd_cookie_sync.js
