@@ -5,6 +5,151 @@
   "icon": "https://avatars.githubusercontent.com/u/62277551?v=4",
   "repo": "https://github.com/csk666/quanx",
   "apps": [
+	  {
+      "id": "byhooi_jd_ql",
+      "name": "京东青龙同步",
+      "keys": [
+        "jdCookieList",
+        "wskeyList",
+        "ql_url",
+        "ql_client_id",
+        "ql_client_secret",
+        "ql_update_interval",
+        "auto_sync_jd_ql",
+        "ql_token",
+        "ql_token_expires"
+      ],
+      "descs_html": [
+        "<h4 align=\"center\">统一配置京东 Cookie / WSKEY 自动同步</h4>",
+        "<p style=\"text-align: center;\">安装 jdcookie.sgmodule 或 wskey.sgmodule 后，打开京东 App 会自动同步。</p>",
+        "<h4 align=\"center\">使用说明请查看 <a href=\"https://github.com/byhooi/Surge/tree/main/boxjs\">GitHub 文档</a></h4>"
+      ],
+      "settings": [
+        {
+          "id": "ql_url",
+          "name": "青龙面板地址",
+          "val": "",
+          "type": "text",
+          "placeholder": "http://192.168.1.100:5700",
+          "desc": "青龙面板的完整地址，如 http://192.168.1.100:5700"
+        },
+        {
+          "id": "ql_client_id",
+          "name": "青龙 Client ID",
+          "val": "",
+          "type": "text",
+          "placeholder": "请输入 Client ID",
+          "desc": "在青龙面板系统设置-应用设置中创建应用后获取"
+        },
+        {
+          "id": "ql_client_secret",
+          "name": "青龙 Client Secret",
+          "val": "",
+          "type": "text",
+          "placeholder": "请输入 Client Secret",
+          "desc": "在青龙面板系统设置-应用设置中创建应用后获取"
+        },
+        {
+          "id": "ql_update_interval",
+          "name": "更新间隔（秒）",
+          "val": "1800",
+          "type": "text",
+          "placeholder": "1800",
+          "desc": "Cookie/WSKEY 默认 30 分钟内不重复同步，凭证变化时立即同步"
+        },
+        {
+          "id": "auto_sync_jd_ql",
+          "name": "自动同步",
+          "val": true,
+          "type": "boolean",
+          "desc": "同时控制 Cookie 与 WSKEY，关闭后仅保留手动同步"
+        },
+        {
+          "id": "jdCookieList",
+          "name": "Cookie 列表",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 5,
+          "desc": "存储的京东 Cookie 列表，JSON 格式"
+        },
+        {
+          "id": "wskeyList",
+          "name": "WSKEY 列表",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 5,
+          "desc": "存储的京东 WSKEY 列表，JSON 格式"
+        }
+      ],
+      "scripts": [
+        {
+          "name": "同步 Cookie 到青龙",
+          "script": "jdcookie_ql_sync.js"
+        },
+        {
+          "name": "清空 Cookie 列表",
+          "script": "jdcookie_clear.js"
+        },
+        {
+          "name": "同步 WSKEY 到青龙",
+          "script": "wskey_ql_sync.js"
+        },
+        {
+          "name": "清空 WSKEY 列表",
+          "script": "wskey_clear.js"
+        }
+      ],
+      "author": "@byhooi",
+      "repo": "https://github.com/byhooi/Surge",
+      "icons": [
+        "https://raw.githubusercontent.com/byhooi/Surge/main/icon/jd.png",
+        "https://raw.githubusercontent.com/byhooi/Surge/main/icon/jd.png"
+      ]
+    },
+    {
+      "id": "byhooi_videourl_config",
+      "name": "跳绳参数",
+      "keys": [
+        "DEFAULT_REQUIRED_QUALIFIED_COUNT",
+        "QUALIFIED_THRESHOLD",
+        "EXCELLENT_THRESHOLD"
+      ],
+      "descs_html": [
+        "<h4 align=\"center\">配置 Script/VideoUrl.js 的默认判定阈值</h4>",
+        "<p>根据实际需求调整默认合格次数、达标阈值和优秀阈值。</p>"
+      ],
+      "settings": [
+        {
+          "id": "DEFAULT_REQUIRED_QUALIFIED_COUNT",
+          "name": "默认合格次数",
+          "val": 3,
+          "type": "number",
+          "desc": "对应 DEFAULT_REQUIRED_QUALIFIED_COUNT，满足多少次合格视为通过。"
+        },
+        {
+          "id": "QUALIFIED_THRESHOLD",
+          "name": "达标跳绳数阈值",
+          "val": 195,
+          "type": "number",
+          "desc": "对应 QUALIFIED_THRESHOLD，一分钟跳绳数达到该值计为合格。"
+        },
+        {
+          "id": "EXCELLENT_THRESHOLD",
+          "name": "优秀跳绳数阈值",
+          "val": 200,
+          "type": "number",
+          "desc": "对应 EXCELLENT_THRESHOLD，一分钟跳绳数达到该值计为优秀。"
+        }
+      ],
+      "author": "@byhooi",
+      "repo": "https://github.com/byhooi/Surge",
+      "icons": [
+        "https://raw.githubusercontent.com/byhooi/Surge/main/icon/tiaosheng.png",
+        "https://raw.githubusercontent.com/byhooi/Surge/main/icon/tiaosheng.png"
+      ]
+    },
 {
       "id": "yhsh",
       "name": "永辉生活",
