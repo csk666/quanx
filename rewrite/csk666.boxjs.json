@@ -5,7 +5,7 @@
   "icon": "https://avatars.githubusercontent.com/u/62277551?v=4",
   "repo": "https://github.com/csk666/quanx",
   "apps": [
-	  {
+	     {
       "id": "byhooi_jd_ql",
       "name": "京东青龙同步",
       "keys": [
@@ -14,6 +14,8 @@
         "ql_url",
         "ql_client_id",
         "ql_client_secret",
+        "jd_cookie_update_interval",
+        "jd_wskey_update_interval",
         "ql_update_interval",
         "auto_sync_jd_ql",
         "ql_token",
@@ -50,12 +52,20 @@
           "desc": "在青龙面板系统设置-应用设置中创建应用后获取"
         },
         {
-          "id": "ql_update_interval",
-          "name": "更新间隔（秒）",
+          "id": "jd_cookie_update_interval",
+          "name": "Cookie 更新间隔（秒）",
           "val": "1800",
           "type": "text",
           "placeholder": "1800",
-          "desc": "Cookie/WSKEY 默认 30 分钟内不重复同步，凭证变化时立即同步"
+          "desc": "JD_COOKIE 默认 30 分钟内不重复同步，凭证变化时立即同步"
+        },
+        {
+          "id": "jd_wskey_update_interval",
+          "name": "WSKEY 更新间隔（秒）",
+          "val": "1800",
+          "type": "text",
+          "placeholder": "1800",
+          "desc": "JD_WSCK 默认 30 分钟内不重复同步，凭证变化时立即同步"
         },
         {
           "id": "auto_sync_jd_ql",
@@ -82,72 +92,6 @@
           "rows": 5,
           "desc": "存储的京东 WSKEY 列表，JSON 格式"
         }
-      ],
-      "scripts": [
-        {
-          "name": "同步 Cookie 到青龙",
-          "script": "jdcookie_ql_sync.js"
-        },
-        {
-          "name": "清空 Cookie 列表",
-          "script": "jdcookie_clear.js"
-        },
-        {
-          "name": "同步 WSKEY 到青龙",
-          "script": "wskey_ql_sync.js"
-        },
-        {
-          "name": "清空 WSKEY 列表",
-          "script": "wskey_clear.js"
-        }
-      ],
-      "author": "@byhooi",
-      "repo": "https://github.com/byhooi/Surge",
-      "icons": [
-        "https://raw.githubusercontent.com/byhooi/Surge/main/icon/jd.png",
-        "https://raw.githubusercontent.com/byhooi/Surge/main/icon/jd.png"
-      ]
-    },
-    {
-      "id": "byhooi_videourl_config",
-      "name": "跳绳参数",
-      "keys": [
-        "DEFAULT_REQUIRED_QUALIFIED_COUNT",
-        "QUALIFIED_THRESHOLD",
-        "EXCELLENT_THRESHOLD"
-      ],
-      "descs_html": [
-        "<h4 align=\"center\">配置 Script/VideoUrl.js 的默认判定阈值</h4>",
-        "<p>根据实际需求调整默认合格次数、达标阈值和优秀阈值。</p>"
-      ],
-      "settings": [
-        {
-          "id": "DEFAULT_REQUIRED_QUALIFIED_COUNT",
-          "name": "默认合格次数",
-          "val": 3,
-          "type": "number",
-          "desc": "对应 DEFAULT_REQUIRED_QUALIFIED_COUNT，满足多少次合格视为通过。"
-        },
-        {
-          "id": "QUALIFIED_THRESHOLD",
-          "name": "达标跳绳数阈值",
-          "val": 195,
-          "type": "number",
-          "desc": "对应 QUALIFIED_THRESHOLD，一分钟跳绳数达到该值计为合格。"
-        },
-        {
-          "id": "EXCELLENT_THRESHOLD",
-          "name": "优秀跳绳数阈值",
-          "val": 200,
-          "type": "number",
-          "desc": "对应 EXCELLENT_THRESHOLD，一分钟跳绳数达到该值计为优秀。"
-        }
-      ],
-      "author": "@byhooi",
-      "repo": "https://github.com/byhooi/Surge",
-      "icons": [
-        "https://raw.githubusercontent.com/byhooi/Surge/main/icon/tiaosheng.png",
-        "https://raw.githubusercontent.com/byhooi/Surge/main/icon/tiaosheng.png"
       ]
     },
 {
