@@ -14,12 +14,15 @@
         "ql_url",
         "ql_client_id",
         "ql_client_secret",
+        "jd_cookie_rewrite_interval",
+        "jd_wskey_rewrite_interval",
         "jd_cookie_update_interval",
         "jd_wskey_update_interval",
         "ql_update_interval",
         "auto_sync_jd_ql",
         "ql_token",
-        "ql_token_expires"
+        "ql_token_expires",
+        "ql_token_fingerprint"
       ],
       "descs_html": [
         "<h4 align=\"center\">统一配置京东 Cookie / WSKEY 自动同步</h4>",
@@ -52,12 +55,28 @@
           "desc": "在青龙面板系统设置-应用设置中创建应用后获取"
         },
         {
+          "id": "jd_cookie_rewrite_interval",
+          "name": "Cookie 重写处理间隔（秒）",
+          "val": "5",
+          "type": "text",
+          "placeholder": "5",
+          "desc": "控制 JD_COOKIE 重写命中后的实际处理频率，可填 5、10；填 0 关闭该节流"
+        },
+        {
+          "id": "jd_wskey_rewrite_interval",
+          "name": "WSKEY 重写处理间隔（秒）",
+          "val": "5",
+          "type": "text",
+          "placeholder": "5",
+          "desc": "控制 JD_WSCK 重写命中后的实际处理频率，可填 5、10；填 0 关闭该节流"
+        },
+        {
           "id": "jd_cookie_update_interval",
           "name": "Cookie 更新间隔（秒）",
           "val": "1800",
           "type": "text",
           "placeholder": "1800",
-          "desc": "JD_COOKIE 默认 30 分钟内不重复同步，凭证变化时立即同步"
+          "desc": "JD_COOKIE 最小重复同步/失败重试间隔（秒），可填 5、10；凭证变化时立即同步"
         },
         {
           "id": "jd_wskey_update_interval",
@@ -65,7 +84,7 @@
           "val": "1800",
           "type": "text",
           "placeholder": "1800",
-          "desc": "JD_WSCK 默认 30 分钟内不重复同步，凭证变化时立即同步"
+          "desc": "JD_WSCK 最小重复同步/失败重试间隔（秒），可填 5、10；凭证变化时立即同步"
         },
         {
           "id": "auto_sync_jd_ql",
