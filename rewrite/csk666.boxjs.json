@@ -5,6 +5,95 @@
   "icon": "https://avatars.githubusercontent.com/u/62277551?v=4",
   "repo": "https://github.com/csk666/quanx",
   "apps": [
+	      {
+      "id": "kele_reading",
+      "name": "可乐阅读",
+      "author": "@codex",
+      "repo": "",
+      "keys": [
+        "keleCookieList",
+        "ql_url",
+        "ql_client_id",
+        "ql_client_secret",
+        "kele_update_interval",
+        "kele_bypass_interval_check",
+        "auto_sync_kele_ql",
+        "kele_default_remark",
+        "ql_token",
+        "ql_token_expires",
+        "ql_token_fingerprint"
+      ],
+      "descs_html": [
+        "<h4 align=\"center\">微信内打开可乐阅读页面即可自动抓取 udtauth40 并同步到青龙</h4>",
+        "<p>青龙变量：<b>kele_auth</b>，值为 udtauth40 凭证；多账号用换行 / @ 分隔，可用“备注#凭证”加备注。</p>",
+        "<p>安装 kele_cookie_sync.snippet 生效；青龙面板需开放 OpenAPI 应用（Client ID / Client Secret）。</p>"
+      ],
+      "settings": [
+        {
+          "id": "ql_url",
+          "name": "青龙面板地址",
+          "val": "",
+          "type": "text",
+          "placeholder": "http://192.168.1.100:5700",
+          "desc": "青龙面板的完整地址，如 http://192.168.1.100:5700"
+        },
+        {
+          "id": "ql_client_id",
+          "name": "青龙 Client ID",
+          "val": "",
+          "type": "text",
+          "placeholder": "请输入 Client ID",
+          "desc": "在青龙面板系统设置-应用设置中创建应用后获取"
+        },
+        {
+          "id": "ql_client_secret",
+          "name": "青龙 Client Secret",
+          "val": "",
+          "type": "text",
+          "placeholder": "请输入 Client Secret",
+          "desc": "在青龙面板系统设置-应用设置中创建应用后获取"
+        },
+        {
+          "id": "auto_sync_kele_ql",
+          "name": "自动同步",
+          "val": true,
+          "type": "boolean",
+          "desc": "关闭后仅保留手动同步"
+        },
+        {
+          "id": "kele_update_interval",
+          "name": "更新间隔（秒）",
+          "val": "1800",
+          "type": "text",
+          "placeholder": "1800",
+          "desc": "相同凭证的最小重复同步间隔（秒）；凭证变化时立即同步"
+        },
+        {
+          "id": "kele_default_remark",
+          "name": "默认备注",
+          "val": "",
+          "type": "text",
+          "placeholder": "可不填",
+          "desc": "抓不到账号昵称/UID 时使用的备注，单账号建议填写"
+        },
+        {
+          "id": "kele_bypass_interval_check",
+          "name": "忽略间隔检查仅一次",
+          "val": false,
+          "type": "boolean",
+          "desc": "打开后下次同步忽略间隔限制，执行完自动关闭"
+        },
+        {
+          "id": "keleCookieList",
+          "name": "凭证列表",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 5,
+          "desc": "自动抓取存储的 udtauth40 列表（JSON 格式），一般无需手动编辑"
+        }
+      ]
+    },
 	     {
       "id": "byhooi_jd_ql",
       "name": "京东青龙同步",
