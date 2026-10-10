@@ -18,14 +18,13 @@
         "kele_update_interval",
         "kele_bypass_interval_check",
         "auto_sync_kele_ql",
-        "kele_default_remark",
         "kele_ql_token",
         "kele_ql_token_expires",
         "kele_ql_token_fingerprint"
       ],
       "descs_html": [
         "<h4 align=\"center\">微信内打开可乐阅读页面即可自动抓取 udtauth40 并同步到青龙</h4>",
-        "<p>青龙变量：<b>kele_auth</b>，每个账号一行，固定格式“备注#凭证”（备注允许为空，即 #凭证）。</p>",
+        "<p>青龙变量：<b>kele_auth</b>，每个账号一行，固定格式 <b>uid#凭证</b>（拿不到 uid 时即 #凭证）。</p>",
         "<p>青龙连接参数使用独立前缀 <b>kele_ql_*</b>，不会与京东同步脚本的 ql_* 冲突，可指向另一台青龙。</p>",
         "<p>安装 kele_cookie_sync.snippet 生效；青龙面板需开放 OpenAPI 应用（Client ID / Client Secret）。</p>"
       ],
@@ -68,14 +67,6 @@
           "type": "text",
           "placeholder": "1800",
           "desc": "按账号各自独立计时。某账号在间隔内的命中会直接结束（不推送），其它账号不受影响"
-        },
-        {
-          "id": "kele_default_remark",
-          "name": "默认备注",
-          "val": "",
-          "type": "text",
-          "placeholder": "可不填",
-          "desc": "备注按 昵称 → uid → 此处 顺序取；都为空时就是 #凭证，备注为空属正常情况"
         },
         {
           "id": "kele_bypass_interval_check",
