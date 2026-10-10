@@ -86,6 +86,68 @@
         }
       ]
     },
+    {
+      "id": "yuer_reading",
+      "name": "鱼儿阅读",
+      "author": "@codex",
+      "repo": "",
+      "keys": [
+        "yuer_ck",
+        "kele_ql_url",
+        "kele_ql_client_id",
+        "kele_ql_client_secret"
+      ],
+      "descs_html": [
+        "<h4 align=\"center\">打开鱼儿阅读页面即可自动抓取 yeauth23 并同步到青龙</h4>",
+        "<p>青龙变量：<b>yuer_ck</b>，多账号使用 <b>@</b> 分隔，单账号固定格式 <b>user.id#yeauth23</b>。</p>",
+        "<p>拦截接口：<b>h5.ww3k6cr6mi.cn/yeipad</b>；账号字段取自响应体 <b>data.user.id</b>。</p>",
+        "<p>与可乐阅读共用 kele_cookie_sync.js 及 kele_ql_* 青龙连接参数。</p>"
+      ],
+      "settings": [
+        {
+          "id": "kele_ql_url",
+          "name": "青龙面板地址",
+          "val": "",
+          "type": "text",
+          "placeholder": "http://192.168.1.100:5700",
+          "desc": "与可乐阅读共用，填写青龙面板完整地址"
+        },
+        {
+          "id": "kele_ql_client_id",
+          "name": "青龙 Client ID",
+          "val": "",
+          "type": "text",
+          "placeholder": "请输入 Client ID",
+          "desc": "与可乐阅读共用"
+        },
+        {
+          "id": "kele_ql_client_secret",
+          "name": "青龙 Client Secret",
+          "val": "",
+          "type": "text",
+          "placeholder": "请输入 Client Secret",
+          "desc": "与可乐阅读共用"
+        },
+        {
+          "id": "yuer_ck",
+          "name": "青龙变量 yuer_ck",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 4,
+          "desc": "由脚本同步后在本地镜像显示；实际多账号值以青龙变量 yuer_ck 为准"
+        }
+      ],
+      "script": "https://raw.githubusercontent.com/csk666/quanx/main/kele_cookie_sync.js",
+      "rewrites": [
+        {
+          "type": "response",
+          "pattern": "^https?:\\/\\/h5\\.ww3k6cr6mi\\.cn\\/yeipad(?:\\?.*)?$",
+          "script": "kele_cookie_sync.js",
+          "body": true
+        }
+      ]
+    },
 	     {
       "id": "byhooi_jd_ql",
       "name": "京东青龙同步",
