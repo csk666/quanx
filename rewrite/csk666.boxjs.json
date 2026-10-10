@@ -148,6 +148,80 @@
         }
       ]
     },
+    {
+      "id": "xyy_reading",
+      "name": "小阅阅",
+      "author": "@codex",
+      "repo": "",
+      "keys": [
+        "xyy_cookie",
+        "xyy_unionid",
+        "kele_ql_url",
+        "kele_ql_client_id",
+        "kele_ql_client_secret"
+      ],
+      "descs_html": [
+        "<h4 align=\"center\">打开小阅阅页面即可自动抓取 ysmuid 和 unionid 并同步到青龙</h4>",
+        "<p>青龙变量：<b>xyy_cookie</b>、<b>xyy_unionid</b>，多账号支持 <b>&amp;</b>、<b>@</b> 或换行分隔。</p>",
+        "<p>拦截接口：<b>/xiaoxinxin/sign_info</b>；Cookie 提取 <b>ysmuid</b>，查询参数提取 <b>unionid</b>。</p>",
+        "<p>与可乐阅读、鱼儿阅读共用 kele_cookie_sync.js 及 kele_ql_* 青龙连接参数。</p>"
+      ],
+      "settings": [
+        {
+          "id": "kele_ql_url",
+          "name": "青龙面板地址",
+          "val": "",
+          "type": "text",
+          "placeholder": "http://192.168.1.100:5700",
+          "desc": "与其它同步应用共用，填写青龙面板完整地址"
+        },
+        {
+          "id": "kele_ql_client_id",
+          "name": "青龙 Client ID",
+          "val": "",
+          "type": "text",
+          "placeholder": "请输入 Client ID",
+          "desc": "与其它同步应用共用"
+        },
+        {
+          "id": "kele_ql_client_secret",
+          "name": "青龙 Client Secret",
+          "val": "",
+          "type": "text",
+          "placeholder": "请输入 Client Secret",
+          "desc": "与其它同步应用共用"
+        },
+        {
+          "id": "xyy_cookie",
+          "name": "青龙变量 xyy_cookie",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 4,
+          "placeholder": "ysmuid=cookie1&ysmuid=cookie2",
+          "desc": "由脚本同步后在本地镜像显示；实际值以青龙变量 xyy_cookie 为准"
+        },
+        {
+          "id": "xyy_unionid",
+          "name": "青龙变量 xyy_unionid",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 4,
+          "placeholder": "unionid1&unionid2",
+          "desc": "与 xyy_cookie 顺序对应；实际值以青龙变量 xyy_unionid 为准"
+        }
+      ],
+      "script": "https://raw.githubusercontent.com/csk666/quanx/main/kele_cookie_sync.js",
+      "rewrites": [
+        {
+          "type": "request",
+          "pattern": "^https?:\\/\\/[^\\/]+\\/xiaoxinxin\\/sign_info(?:\\?.*)?$",
+          "script": "kele_cookie_sync.js",
+          "body": false
+        }
+      ]
+    },
 	     {
       "id": "byhooi_jd_ql",
       "name": "京东青龙同步",
